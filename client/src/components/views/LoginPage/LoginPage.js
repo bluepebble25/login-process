@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { loginUser } from '../../../_actions/user_action';
 import { useNavigate } from 'react-router-dom';
 
-function LoginPage(props) {
+function LoginPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -29,7 +29,7 @@ function LoginPage(props) {
     dispatch(loginUser(body))
       .then(response => {
         if(response.payload.loginSuccess) {
-          navigate(-1);
+          navigate('/');
         } else {
           alert('Error');
         }
